@@ -30,8 +30,13 @@ public class myMeta_data implements Meta_data {
     	this.Channel=Integer.parseInt(line[4]);
     	this.RSSI=Integer.parseInt(line[5]);
     	this.AccuracyMeters=Integer.parseInt(line[9]);
-    }
-	@Override // https://stackoverflow.com/questions/26637168/how-to-convert-a-date-to-milliseconds
+    } 
+    /**
+     * this function return a date and time into a milliseconds.
+     * we use https://stackoverflow.com/questions/26637168/how-to-convert-a-date-to-milliseconds
+     * for help.
+     */
+	@Override 
 	public long getUTC() {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date date;

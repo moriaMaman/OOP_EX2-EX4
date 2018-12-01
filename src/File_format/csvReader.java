@@ -9,12 +9,19 @@ import GIS.GIS_project;
 import GIS.myGIS_element;
 import GIS.myGIS_layer;
 import GIS.myGIS_project;
+/**
+ * this class remove a CSV file and translate it into a GIS layer, also every line in the CSV file is a GIS element. 
+ * @author Atara Zohar & Moria Maman
+ *
+ */
 
 public class csvReader {
 
-/*
+/**
  * this function gets a path of a CSV file- (in a similar format to the given example) 
  * and return an GIS_layer that contains the information in the file
+ * @param path
+ * @return
  */
 	public static GIS_layer CSVreader(String path) {		
 		String csvFile = path;

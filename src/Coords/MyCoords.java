@@ -2,17 +2,19 @@ package Coords;
 
 import Geom.Point3D;
 /**
- * this class has function that we can use to calculate many problems with GPS coordinates 
+ * this class has function that we can use to calculate many problems with GPS coordinates like distance, valid of point etc.. 
  * @author Atara Zohar & Moria Maman
  *
  */
 
 public class MyCoords implements coords_converter {
 	public final double radius =6371000;
-
+/**
+ * this function get two points GPS and one in meter and need to trenslate one bake to GPS and return new GPS point
+ * add the distance between the two points given.
+ */
 	@Override
 	public Point3D add(Point3D gps, Point3D local_vector_in_meter) {
-		// TODO Auto-generated method stub
 		double LonNorm=Math.cos(gps.x()*Math.PI/180);
 		double xToRad=Point3D.d2r(gps.x());
 		double yToRad=Point3D.d2r(gps.y());
@@ -24,7 +26,9 @@ public class MyCoords implements coords_converter {
 		Point3D newPoint=new Point3D(Point3D.r2d(newX),Point3D.r2d(newY),newZ);
 		return(newPoint);
 	}
-
+/**
+ * this function calculate distance between two GPS points
+ */
 	@Override
 	public double distance3d(Point3D gps0, Point3D gps1) {
 		// TODO Auto-generated method stub
@@ -38,7 +42,10 @@ public class MyCoords implements coords_converter {
 
 		return Math.sqrt((tometer1*tometer1) + (tometer2*tometer2));
 	}
-
+/**
+ * this function get two points and need to return a 3d vector of the distance in meter of the distance
+ * between the lon, lat, alt.
+ */
 	@Override
 	public Point3D vector3D(Point3D gps0, Point3D gps1) {
 		// TODO Auto-generated method stub
@@ -55,7 +62,9 @@ public class MyCoords implements coords_converter {
 
 		return vector3d;
 	}
-
+	/**
+	 * this function calculate the azimuth_elevation_dist and return a array with the results
+	 */
 	@Override
 	public double[] azimuth_elevation_dist(Point3D gps0, Point3D gps1) {
 		// TODO Auto-generated method stub
@@ -78,8 +87,10 @@ public class MyCoords implements coords_converter {
 
 		return ans;
 	}
-
-
+	
+/**
+ * this function return a boolean variable if the GPS point is valid or not
+ */
 	@Override
 	public boolean isValid_GPS_Point(Point3D p) {
 		// TODO Auto-generated method stub
