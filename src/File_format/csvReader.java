@@ -2,32 +2,46 @@ package File_format;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
+
+
+import GIS.GIS_layer;
+import GIS.GIS_project;
+import GIS.myGIS_element;
+import GIS.myGIS_layer;
+import GIS.myGIS_project;
 
 public class csvReader {
-	
-	
-	public ArrayList<String []> csvReader(String path)
-	{
-		ArrayList<String []> csvLine=new ArrayList<String []>();
-    	String csvFile = path;
+
+/*
+ * this function gets a path of a CSV file- (in a similar format to the given example) 
+ * and return an GIS_layer that contains the information in the file
+ */
+	public static GIS_layer CSVreader(String path) {		
+		String csvFile = path;
 		String line = "";
 		String cvsSplitBy = ",";
+		GIS_layer csvlayer= new myGIS_layer();
+		int i=0;
 
 		try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) 
 		{
+			GIS_project files= new myGIS_project(); 
 			while ((line = br.readLine()) != null) 
 			{
-				String[] userInfo = line.split(cvsSplitBy);
-				csvLine.add(userInfo);
+				if(i>1) {//The first two lines in the file are irrelevant
+					String[] userInfo = line.split(cvsSplitBy);
+					csvlayer.add(new myGIS_element(userInfo));
+				}
+				i++;
 			}
-
-		} catch (IOException e) 
+			files.add(csvlayer);
+		} 
+		catch (IOException e) 
 		{
 			e.printStackTrace();
 		}
-		return csvLine;
+		return csvlayer;
 	}
-	
+
 
 }
