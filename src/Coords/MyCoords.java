@@ -1,6 +1,11 @@
 package Coords;
 
 import Geom.Point3D;
+/**
+ * this class has function that we can use to calculate many problems with GPS coordinates 
+ * @author Atara Zohar & Moria Maman
+ *
+ */
 
 public class MyCoords implements coords_converter {
 	public final double radius =6371000;
