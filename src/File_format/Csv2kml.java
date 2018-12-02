@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import Algorithm.multiCsv;
 import GIS.GIS_element;
 import GIS.GIS_layer;
 import GIS.GIS_project;
@@ -23,8 +24,7 @@ public class Csv2kml {
 	 * this function get a name of a CSV file and converts him to kml
 	 * @param path
 	 */
-	public static void Csv2kml(String path) {
-		String output=path.replaceAll("csv", "kml");//the new output file name
+	public static void Csv2kml(String path,String output) {
 		File fileEntry=new File(path);
 		if(fileEntry.isDirectory())//if there is more then one file 
 		{

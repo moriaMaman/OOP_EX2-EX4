@@ -10,15 +10,15 @@ import java.util.Iterator;
 public class myGIS_layer implements GIS_layer {
 
 	HashSet<GIS_element> elSet;
-	String time;
+	Meta_data data;
+	long time;
 
 	public myGIS_layer() {
 		// TODO Auto-generated constructor stub
 		
 		elSet = new HashSet<GIS_element>();
-		
-		SimpleDateFormat time_formatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss.SSS");
-		String time = time_formatter.format(System.currentTimeMillis());
+		this.data=new layerMeta_data();
+		this.time=data.getUTC();
 	}
 
 	@Override
@@ -106,8 +106,7 @@ public class myGIS_layer implements GIS_layer {
 
 	@Override
 	public Meta_data get_Meta_data() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.data;
 	}
 	public String toString() {
 		Iterator <GIS_element> it = this.elSet.iterator();

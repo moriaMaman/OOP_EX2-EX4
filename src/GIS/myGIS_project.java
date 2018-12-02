@@ -7,7 +7,15 @@ import java.util.Iterator;
 
 public class myGIS_project implements GIS_project{
 
-	HashSet<GIS_layer> elproject = new HashSet<GIS_layer>();
+	HashSet<GIS_layer> elproject; 
+	Meta_data data;
+	long time;
+	
+	public myGIS_project() {
+		elproject=new HashSet<GIS_layer>();
+		data=new projectMeta_data();
+		this.time=data.getUTC();
+	}
 	@Override
 	public boolean add(GIS_layer arg0) {
 		// TODO Auto-generated method stub
@@ -88,8 +96,7 @@ public class myGIS_project implements GIS_project{
 
 	@Override
 	public Meta_data get_Meta_data() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.data;
 	}
 	public String toString() {
 		Iterator <GIS_layer> it = this.elproject.iterator();

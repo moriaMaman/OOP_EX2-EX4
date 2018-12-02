@@ -1,12 +1,13 @@
-package File_format;
+package Algorithm;
 
 import java.io.File;
 
+import File_format.csvReader;
 import GIS.GIS_project;
 import GIS.myGIS_layer;
 import GIS.myGIS_project;
 /**
- * this class has a function thet need to run over a folder of files and fint the scv one and translate it to a GIS project object.
+ * this class has a function that need to run over a folder of files and find the scv one and translate it to a GIS project object.
  * @author Atara Zohar & Moria Maman
  *
  */
@@ -25,7 +26,7 @@ public class multiCsv {
 			} 
 			else {
 				String name=fileEntry.getName();
-				if(fileEntry.getName().endsWith(".csv")) {//"read" only the CSV tape files
+				if(name.endsWith(".csv")) {//"read" only the CSV tape files
 					files.add((csvReader.CSVreader(fileEntry.getPath())));
 				}
 			}

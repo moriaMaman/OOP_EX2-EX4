@@ -18,7 +18,7 @@ public class myGIS_element implements GIS_element{
 	private  int _RSSI;
 	private  int _AccuracyMeters;
 	private Point3D _gps;
-
+	private Meta_data data;
 
 	public myGIS_element(String [] l) {
 		this._line=l;
@@ -34,6 +34,7 @@ public class myGIS_element implements GIS_element{
 		double y=Double.parseDouble(this._line[6]);
 		double z=Double.parseDouble(this._line[8]);
     	_gps=new Point3D (x,y,z);
+    	this.data=new elementMeta_data(_line);
 	}
 	
 	public String MAC() {
@@ -72,8 +73,7 @@ public class myGIS_element implements GIS_element{
 
 	@Override
 	public Meta_data getData() {
-		Meta_data m=new myMeta_data(_line);
-		return null;
+		return this.data;
 	}
 
 	@Override
