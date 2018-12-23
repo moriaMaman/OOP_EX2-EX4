@@ -6,8 +6,9 @@ import File_format.csvReader;
 import GIS.GIS_project;
 import GIS.myGIS_layer;
 import GIS.myGIS_project;
+
 /**
- * this class has a function that need to run over a folder of files and find the scv one and translate it to a GIS project object.
+ * this class has a function that need to run over a folder of files and find the csv one and translate it to a GIS project object.
  * @author Atara Zohar & Moria Maman
  *
  */
