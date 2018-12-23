@@ -108,16 +108,5 @@ public class myGIS_layer implements GIS_layer {
 	public Meta_data get_Meta_data() {
 		return this.data;
 	}
-	public String toString() {
-		Iterator <GIS_element> it = this.elSet.iterator();
-		String s="";
-		while(it.hasNext()) {
-			GIS_element lay=it.next();
-			s=s+it.toString()+"\n";
-			
-		}
-		return s;
-		
-	}
 
 }

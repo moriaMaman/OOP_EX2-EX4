@@ -1,0 +1,83 @@
+[<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<Style id="yellow"><IconStyle><Icon><href>http://maps.google.com/mapfiles/kml/paddle/ylw-stars.png</href></Icon></IconStyle></Style><Style id="red"><IconStyle><Icon><href>http://maps.google.com/mapfiles/kml/paddle/red-stars.png</href></Icon></IconStyle></Style>, <folder><Placemark>
+<name><![CDATA[13]]></name>
+<description><![CDATA[speed/Weight: <b>1.0</b>]]></description><styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>32.10264482,35.211068</coordinates></Point>
+</Placemark>
+, <older>, <folder><Placemark>
+<name><![CDATA[13]]></name>
+<description><![CDATA[speed/Weight: <b>1.0</b>]]></description><styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>32.10251966,35.20391021</coordinates></Point>
+</Placemark>
+, <older>, <folder><Placemark>
+<name><![CDATA[13]]></name>
+<description><![CDATA[speed/Weight: <b>1.0</b>]]></description><styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>32.10225369,35.20311757</coordinates></Point>
+</Placemark>
+, <older>, <folder><Placemark>
+<name><![CDATA[13]]></name>
+<description><![CDATA[speed/Weight: <b>1.0</b>]]></description><styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>32.10239971,35.21138826</coordinates></Point>
+</Placemark>
+, <older>, <folder><Placemark>
+<name><![CDATA[13]]></name>
+<description><![CDATA[speed/Weight: <b>1.0</b>]]></description><styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>32.10531494,35.20998713</coordinates></Point>
+</Placemark>
+, <older>, <folder><Placemark>
+<name><![CDATA[13]]></name>
+<description><![CDATA[speed/Weight: <b>1.0</b>]]></description><styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>32.10543489,35.20913844</coordinates></Point>
+</Placemark>
+, <older>, <folder><Placemark>
+<name><![CDATA[13]]></name>
+<description><![CDATA[speed/Weight: <b>1.0</b>]]></description><styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>32.10241015,35.20347786</coordinates></Point>
+</Placemark>
+, <older>, <folder><Placemark>
+<name><![CDATA[13]]></name>
+<description><![CDATA[speed/Weight: <b>1.0</b>]]></description><styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>32.10513241,35.21073173</coordinates></Point>
+</Placemark>
+, <older>, <folder><Placemark>
+<name><![CDATA[13]]></name>
+<description><![CDATA[speed/Weight: <b>1.0</b>]]></description><styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>32.104783,35.20973893</coordinates></Point>
+</Placemark>
+, <older>, <folder><Placemark>
+<name><![CDATA[13]]></name>
+<description><![CDATA[speed/Weight: <b>1.0</b>]]></description><styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>32.10463698,35.20889024</coordinates></Point>
+</Placemark>
+, <older>, <folder><Placemark>
+<name><![CDATA[13]]></name>
+<description><![CDATA[speed/Weight: <b>1.0</b>]]></description><styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>32.10487688,35.20935462</coordinates></Point>
+</Placemark>
+, <older>, <folder><Placemark>
+<name><![CDATA[13]]></name>
+<description><![CDATA[speed/Weight: <b>1.0</b>]]></description><styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>32.10497596,35.21015526</coordinates></Point>
+</Placemark>
+, <older>, <folder><Placemark>
+<name><![CDATA[13]]></name>
+<description><![CDATA[speed/Weight: <b>1.0</b>]]></description><styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>32.10212332,35.2119327</coordinates></Point>
+</Placemark>
+, <older>, </Document>
+</kml>]

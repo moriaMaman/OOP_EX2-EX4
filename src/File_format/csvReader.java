@@ -35,7 +35,7 @@ public class csvReader {
 			GIS_project files= new myGIS_project(); 
 			while ((line = br.readLine()) != null) 
 			{
-				if(i>1) {//The first two lines in the file are irrelevant
+				if(i>0) {//The first line in the file is irrelevant
 					String[] userInfo = line.split(cvsSplitBy);
 					csvlayer.add(new myGIS_element(userInfo));
 				}

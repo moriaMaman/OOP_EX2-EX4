@@ -98,18 +98,6 @@ public class myGIS_project implements GIS_project{
 	public Meta_data get_Meta_data() {
 		return this.data;
 	}
-	public String toString() {
-		Iterator <GIS_layer> it = this.elproject.iterator();
-		String s="";
-		int i=1;
-		while(it.hasNext())
-		{
-			GIS_layer lay=it.next();
-			s=s+it.toString();
-			s=s+"\n"+"number "+i+" file:";
-			i++;
-		}
-		return s;
-	}
+
 
 }

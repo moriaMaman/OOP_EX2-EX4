@@ -1,5 +1,6 @@
 package GIS;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -12,13 +13,11 @@ public class elementMeta_data implements Meta_data {
 	}
 	String [] line;
     String name;
-    String firstSeen;
     
     public elementMeta_data(String [] l)
     {
     	line = l;
     	this.name=line[1];
-    	this.firstSeen=line[3];
     	
     } 
     /**
@@ -28,17 +27,18 @@ public class elementMeta_data implements Meta_data {
      */
 	@Override 
 	public long getUTC() {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		Date date;
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date date = new Date();
 		try {
-			date = sdf.parse(firstSeen);
+			date = dateFormat.parse(dateFormat.format(date));
 			long timeInMillis = date.getTime();
 			 return timeInMillis;
-		} catch (ParseException e) {	
+		} catch (ParseException e) {
 			e.printStackTrace();
 			return 0;
-		}	
+		}
 	}
+
 	public long getTime() {
 		return getUTC();
 	}

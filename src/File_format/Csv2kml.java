@@ -55,18 +55,31 @@ public class Csv2kml {
 			while(it.hasNext()) {
 				myGIS_element element =(myGIS_element) it.next();
 				Point3D cord=(Point3D) element.getGeom();
-				String kmlelement =
-						"<Placemark>\n"+
-								"<name>"+element.SSID()+"</name>\n"+
-								"<description>"+ "BSSID:"+ element.MAC()+
-								"date:"+ element.firstSeen()+
-								"type:"+ element.type()+
-								"</description>\n"+
-								"<Point>\n" +
-								"<coordinates>"+cord.x()+","+cord.y()+"</coordinates>" +
-								"</Point>\n" +
-								"</Placemark>\n";
-				content.add(kmlelement);
+				if(element.type().equals("p")) {
+					String kmlelement =	"<Placemark>\n"+
+							"<type>"+"packman"+"</type>\n"+
+							"<id>"+ "ID:"+ element.id()+
+							"speed:"+ element.speed()+
+							"radius:"+element.radius()+
+							"</description>\n"+
+							"<Point>\n" +
+							"<coordinates>"+cord.x()+","+cord.y()+"</coordinates>" +
+							"</Point>\n" +
+							"</Placemark>\n";
+					content.add(kmlelement);
+				}
+				else {
+					String kmlelement =	"<Placemark>\n"+
+							"<type>"+"fruit"+"</type>\n"+
+							"<id>"+ "ID:"+ element.id()+
+							"weigth:"+ element.weight()+
+							"</description>\n"+
+							"<Point>\n" +
+							"<coordinates>"+cord.x()+","+cord.y()+"</coordinates>" +
+							"</Point>\n" +
+							"</Placemark>\n";
+					content.add(kmlelement);
+				}
 			}
 			content.add(kmlend);
 			String csv = content.toString().replace("[", "").replace("]", "");
@@ -100,18 +113,31 @@ public class Csv2kml {
 					GIS_element el=it2.next();
 					myGIS_element element =(myGIS_element) el;
 					Point3D cord=(Point3D) element.getGeom();
-					String kmlelement =
-							"<Placemark>\n"+
-									"<name>"+element.SSID()+"</name>\n"+
-									"<description>"+ "BSSID:"+ element.MAC()+
-									"date:"+ element.firstSeen()+
-									"type:"+ element.type()+
-									"</description>\n"+
-									"<Point>\n" +
-									"<coordinates>"+cord.x()+","+cord.y()+"</coordinates>" +
-									"</Point>\n" +
-									"</Placemark>\n";
-					content.add(kmlelement);
+					if(element.type().equals("p")) {
+						String kmlelement =	"<Placemark>\n"+
+								"<type>"+"packman"+"</type>\n"+
+								"<id>"+ "ID:"+ element.id()+
+								"speed:"+ element.speed()+
+								"radius:"+element.radius()+
+								"</description>\n"+
+								"<Point>\n" +
+								"<coordinates>"+cord.x()+","+cord.y()+"</coordinates>" +
+								"</Point>\n" +
+								"</Placemark>\n";
+						content.add(kmlelement);
+					}
+					else {
+						String kmlelement =	"<Placemark>\n"+
+								"<type>"+"fruit"+"</type>\n"+
+								"<id>"+ "ID:"+ element.id()+
+								"weigth:"+ element.weight()+
+								"</description>\n"+
+								"<Point>\n" +
+								"<coordinates>"+cord.x()+","+cord.y()+"</coordinates>" +
+								"</Point>\n" +
+								"</Placemark>\n";
+						content.add(kmlelement);
+					}
 				}
 			}
 			content.add(kmlend);

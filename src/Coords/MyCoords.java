@@ -9,6 +9,7 @@ import Geom.Point3D;
 
 public class MyCoords implements coords_converter {
 	public final double radius =6371000;
+	
 /**
  * this function get two points GPS and one in meter and need to trenslate one bake to GPS and return new GPS point
  * add the distance between the two points given.
