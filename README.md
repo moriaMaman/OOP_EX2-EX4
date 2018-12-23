@@ -3,11 +3,17 @@ Navigation
 This project represents a general packman game.
 
 Description 
-The Coords package implements elementary action on GPS points such as adding two points, find the azimuth and elevation, find the distance between two points and more. 
+
+The Coords package implements elementary action on GPS points such as adding two points, find the azimuth and elevation, find the distance between two points and more.
+
 In addition, in the coords package we also have the map class. In that class we have function that convert a pixel on the map picture into a coordinate on the actual map in google earth. 
+
 The algorithm package contain all programs and function of calculation, like the "ShortestPathAlgo" that calculate the optimal path for the packmans to eat all the fruits.
+
 the "gameElements" package contains the objects of the game such as packman, fruit and the game object itself which include a list of the fruits and a list of the packmans in the game.
+
 The thread package help us to move the packmans on the screen.
+
 The last package is the gui one, it contain all the design and the action that happens on the screen.
 
 Authors 
