@@ -27,6 +27,7 @@ import gameElements.Packman;
  * @author Atara Zohar and Moria Maman
  *
  */
+
 public class Path2KML {
 	public static void writeFileKML(String output,Game myGame) {
 		int idP=0;
@@ -80,7 +81,6 @@ public class Path2KML {
 							"</Point>\n" +
 							"</Placemark>\n";
 					content.add(kmlelement);  
-				    
 				}
 				idF=0;
 			}
@@ -94,5 +94,6 @@ public class Path2KML {
 			}
 			
 	}
+	
 
 }

@@ -2,6 +2,7 @@ package Algorithm;
 
 import gameElements.Fruit;
 import gameElements.Packman;
+
 /**
  * this class implements an object of the shortest path algorithem, its contain a packman,
  *  a single fruit and the time it took to get from the packman to the fruit .
@@ -15,6 +16,7 @@ public class closestFruit {
 	private Packman mypackman;
 	private double time;
 	
+
 	public closestFruit (Fruit myfruit, Packman mypackman, double time ){
 		this.myfruit= myfruit;
 		this.mypackman= mypackman;
