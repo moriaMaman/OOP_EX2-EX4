@@ -28,6 +28,8 @@ import Algorithm.Path;
 import Algorithm.Path2KML;
 import Algorithm.ShortestPathAlgo;
 import Algorithm.closestFruit;
+import Coords.GeoBox;
+import Coords.LatLonAlt;
 import Coords.MyCoords;
 import Coords.map;
 import Coords.pixel;
@@ -35,7 +37,9 @@ import Geom.Point3D;
 import Threads.packmanThread;
 import gameElements.Fruit;
 import gameElements.Game;
+import gameElements.Ghost;
 import gameElements.Packman;
+import gameElements.Player;
 import gameElements.Game;
 import gameElements.Packman;
 
@@ -117,23 +121,42 @@ public class MyFrame  extends JFrame implements MouseListener
 		});
 		
 		
+		
 
 		Menu input = new Menu("input");
-		MenuItem input1 = new MenuItem("packman");
-		input.add(input1);
-		input1.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				gamer=1;
-			}
-		});
-		MenuItem input2 = new MenuItem("fruit");
-		input.add(input2);
-		input2.addActionListener(new ActionListener() {
+//		MenuItem input1 = new MenuItem("packman");
+//		input.add(input1);
+//		input1.addActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				gamer=1;
+//			}
+//		});
+//		MenuItem input2 = new MenuItem("fruit");
+//		input.add(input2);
+//		input2.addActionListener(new ActionListener() {
+//
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				gamer=2;
+//			}
+//		});
+		
+//		MenuItem input4 = new MenuItem("ghost");
+//		input.add(input4);
+//		input4.addActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				gamer=3;
+//			}
+//		});
 
+		MenuItem input5 = new MenuItem("player");
+		input.add(input5);
+		input5.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				gamer=2;
+				gamer=4;
 			}
 		});
 		MenuItem input3 = new MenuItem("run");
@@ -146,7 +169,6 @@ public class MyFrame  extends JFrame implements MouseListener
 				
 			}
 		});
-
 		menuBar.add(file);
 		menuBar.add(input);
 
@@ -201,7 +223,8 @@ public class MyFrame  extends JFrame implements MouseListener
 				
 		Iterator <Packman> itP = this.games.packmens.iterator();
 		Iterator <Fruit> itF = this.games.fruits.iterator();
-		//display the packmans
+		Iterator <GeoBox> itB = this.games.boxes.iterator();
+		Iterator <Ghost> itG = this.games.ghosts.iterator();
 		while(itP.hasNext()) {
 			Packman pac=itP.next();
 			g.setColor(Color.YELLOW);
@@ -216,27 +239,64 @@ public class MyFrame  extends JFrame implements MouseListener
 			pixel pixelsF=m.gpsTopixel(fru.currentLocation());
 			g.fillOval(pixelsF.getx()-5, pixelsF.gety()-5, 10, 10);
 		}
+		while(itB.hasNext()) {
+			GeoBox box=itB.next();
+			g.setColor(Color.black);
+			Point3D min=(Point3D)box.getMin();
+			Point3D max=(Point3D)box.getMax();
+			pixel minP=m.gpsTopixel(min);
+			pixel maxP=m.gpsTopixel(max);
+			int RecHigth=minP.gety()-maxP.gety();
+			int RecWidgh=maxP.getx()-minP.getx();
+			pixel startRec=new pixel(minP.getx(),maxP.gety());
+			g.fillRect(startRec.getx(), startRec.gety(), RecWidgh, RecHigth);
+		}
+		while(itG.hasNext()) {
+			Ghost ghost=itG.next();
+			g.setColor(Color.MAGENTA);
+			pixel p=m.gpsTopixel(ghost.getCurrentLocation());
+			g.fillOval((int)(p.getx()-10), p.gety()-10, 20, 20);
+		}
+		
+		g.setColor(Color.pink);
+		pixel p=m.gpsTopixel(this.games.player.getCurrentLocation());
+		g.fillOval((int)(p.getx()-20), p.gety()-20, 40, 40);
 		
 	}
 	@Override
 	public void mouseClicked(MouseEvent arg) {
 		x = arg.getX();
 		y = arg.getY();
-		if(gamer==1){//packman
+//		if(gamer==1){//packman
+//			map m=m=new map(this.getWidth(),this.getHeight());
+//			pixel pix=new pixel(x,y);
+//			Point3D p2g=m.pixelToGps(pix);
+//			pixel pi=m.gpsTopixel(new Point3D(32.10333584,35.20895676));
+//			Packman p=new Packman(p2g,1,1);
+//			games.packmens.add(p);
+//		}
+//		if(gamer==2){//fruit
+//			map m=m=new map(this.getWidth(),this.getHeight());
+//			pixel pix=new pixel(x,y);
+//			Point3D p2g=m.pixelToGps(pix);
+//			Fruit f=new Fruit(p2g,1);
+//			games.fruits.add(f);
+//		}
+//		if(gamer==3) {//gohst
+//			map m=m=new map(this.getWidth(),this.getHeight());
+//			pixel pix=new pixel(x,y);
+//			Point3D p2g=m.pixelToGps(pix);
+//			Ghost g=new Ghost(p2g,1,1);
+//			games.ghosts.add(g);
+//			
+//		}
+		if(gamer==4) {//player
 			map m=m=new map(this.getWidth(),this.getHeight());
 			pixel pix=new pixel(x,y);
 			Point3D p2g=m.pixelToGps(pix);
-			pixel pi=m.gpsTopixel(new Point3D(32.10333584,35.20895676));
-			Packman p=new Packman(p2g,1,1);
-			games.packmens.add(p);
-		}
-		if(gamer==2){//fruit
-			map m=m=new map(this.getWidth(),this.getHeight());
-			pixel pix=new pixel(x,y);
-			Point3D p2g=m.pixelToGps(pix);
-			Packman p=new Packman(p2g,1,1);
-			Fruit f=new Fruit(p2g,1);
-			games.fruits.add(f);
+			Player p=new Player(1,1,p2g);
+			games.player=p;
+			
 		}
 		
 		repaint();
@@ -255,6 +315,9 @@ public class MyFrame  extends JFrame implements MouseListener
 	public void clearGame() {
 		games.fruits.clear();
 		games.packmens.clear();
+		games.player.setCurrentLocation(new Point3D(0,0));
+		games.boxes.clear();
+		games.ghosts.clear();
 		repaint();
 	}
 	public void saveFile() {

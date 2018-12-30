@@ -15,6 +15,8 @@ public class myGIS_element implements GIS_element{
 	private double _Weight;
 	double _radius;
 	private Point3D _gps;
+	private Point3D _gps2;
+	
 	private elementMeta_data data;
 
 
@@ -26,6 +28,17 @@ public class myGIS_element implements GIS_element{
 		_Weight=Double.parseDouble(_line[5]);
 		if(_type.equals("P")) {
 			_radius=Double.parseDouble(_line[6]);
+		}
+		if(_type.equals("G")||_type.equals("G") ) {
+			_radius=Double.parseDouble(_line[6]);
+		}
+		if(_type.equals("B")) {
+			_Weight=Double.parseDouble(_line[8]);
+			double x2=Double.parseDouble(this._line[5]);
+			double y2=Double.parseDouble(this._line[6]);
+			double z2=Double.parseDouble(this._line[7]);
+			_gps2=new Point3D (x2,y2,z2);
+			
 		}
 		double x=Double.parseDouble(this._line[2]);
 		double y=Double.parseDouble(this._line[3]);
@@ -59,7 +72,9 @@ public class myGIS_element implements GIS_element{
 	public Geom_element getGeom() {
 		return _gps;
 	}
-
+	public Geom_element getGeom2() {
+		return _gps2;
+	}
 	@Override
 	public Meta_data getData() {
 		return this.data;
