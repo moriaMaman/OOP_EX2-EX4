@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"Algorithm"},{"l":"Coords"},{"l":"File_format"},{"l":"gameElements"},{"l":"Geom"},{"l":"GIS"},{"l":"GUI"},{"l":"Threads"}]
+packageSearchIndex = [{"l":"Algorithm"},{"l":"Coords"},{"l":"DataBase"},{"l":"ex4_example"},{"l":"File_format"},{"l":"gameElements"},{"l":"Geom"},{"l":"GIS"},{"l":"GUI"},{"l":"Threads"}]

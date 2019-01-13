@@ -39,6 +39,7 @@ public class Ex4_Main_Example {
 		// 4) get the game-board data
 		ArrayList<String> board_data = play1.getBoard();
 		for(int i=0;i<board_data.size();i++) {
+			
 			System.out.println(board_data.get(i));
 		}
 		System.out.println();

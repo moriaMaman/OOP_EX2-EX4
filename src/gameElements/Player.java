@@ -1,7 +1,11 @@
 package gameElements;
 
 import Geom.Point3D;
-
+/**
+ * this class represents a Player object.
+ * @author Atara Zohar & Moria Maman
+ *
+ */
 public class Player {
 	
 	private int _id;

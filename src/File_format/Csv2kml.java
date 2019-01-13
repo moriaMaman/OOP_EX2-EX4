@@ -7,12 +7,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import Algorithm.multiCsv;
+//import Algorithm.multiCsv;
 import GIS.GIS_element;
 import GIS.GIS_layer;
 import GIS.GIS_project;
 import GIS.myGIS_element;
 import Geom.Point3D;
+import Robot.Play;
 /**
  * This class converts a one or multiple CSV files to KML file
  * @author Atara Zohar & Moria Maman
@@ -28,12 +29,13 @@ public class Csv2kml {
 		File fileEntry=new File(path);
 		if(fileEntry.isDirectory())//if there is more then one file 
 		{
-			GIS_project files=multiCsv.multiCsv(fileEntry);
-			p2kml(files,output);
+			//GIS_project files=multiCsv.multiCsv(fileEntry);
+			//p2kml(files,output);
 
 		}
-		else {//if there is only one csv file 
-			GIS_layer csvlayer= csvReader.CSVreader(path);
+		else {//if there is only one csv file
+			Play play=new Play(path);
+			GIS_layer csvlayer= csvReader.CSVreader(play);
 			writeFileKML(csvlayer,output);	
 		}
 	}

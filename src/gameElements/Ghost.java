@@ -2,6 +2,11 @@ package gameElements;
 
 import Geom.Point3D;
 
+/**
+ * this class represents a ghost object.
+ * @author Atara Zohar & Moria Maman
+ *
+ */
 public class Ghost {
 	private int _id;
 	private Point3D _currentLocation;

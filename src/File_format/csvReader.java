@@ -24,8 +24,7 @@ public class csvReader {
  * @param path
  * @return
  */
-	public static GIS_layer CSVreader(String path) {
-		Play play1 = new Play(path);
+	public static GIS_layer CSVreader(Play play1) {
 		GIS_layer csvlayer= new myGIS_layer();
 		GIS_project files= new myGIS_project(); 
 		ArrayList<String> board_data = play1.getBoard();

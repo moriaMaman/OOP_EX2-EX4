@@ -11,8 +11,11 @@ import Geom.Point3D;
 
 public class map {
 	
+	//static final Point3D mapCoordsStart=new Point3D(32.106046,35.202574);
+	//static final Point3D mapCoordsEnd=new Point3D(32.101858,35.212405);
 	static final Point3D mapCoordsStart=new Point3D(32.106046,35.202574);
 	static final Point3D mapCoordsEnd=new Point3D(32.101858,35.212405);
+	
 	static final Point3D mapPoint=new Point3D(mapCoordsStart.x()-mapCoordsEnd.x(),mapCoordsEnd.y()-mapCoordsStart.y());
 	private int frameWidth;
 	private int frameHeigth;
