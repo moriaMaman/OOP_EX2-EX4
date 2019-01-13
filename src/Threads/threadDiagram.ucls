@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="Threads.packmanThread" project="Navigtion" 
-    file="/Navigtion/src/Threads/packmanThread.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="176" width="285" x="284" y="279"/>    
+  <class id="1" language="java" name="Threads.playerThreads" project="Navigtion" 
+    file="/Navigtion/src/Threads/playerThreads.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="176" width="248" x="663" y="369"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
